@@ -1,0 +1,34 @@
+{
+  "manifest_version": 2,
+
+  "name": "Draugiem",
+  "description": "Draugiem login.",
+  "version": "1.1",
+
+  "permissions": [
+        "background",
+        "*://*.draugiem.lv/*",
+        "*://draugiem.lv/*",
+        "*://*.draugiem.lv/*",
+        "*://draugiem.lv/*"
+  ],
+  "browser_action": {
+  },
+  "web_accessible_resources": [ 
+    "draugiem.css" 
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.draugiem.lv/*",
+        "https://draugiem.lv/*",
+        "http://www.draugiem.lv/*",
+        "http://draugiem.lv/*"
+      ],
+      "css": ["draugiem.css"],
+      "js": ["draugiem.js"],
+      "run_at": "document_end",
+      "all_frames": true
+    }
+  ]
+}
